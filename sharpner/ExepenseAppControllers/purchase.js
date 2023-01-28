@@ -13,8 +13,8 @@ exports.membership=async(req,res,next)=>{
     try{
         
         var rzp= new Razorpay({
-            key_id: process.env.RAZORPAY_KEY,
-            key_secret: process.env.RAZORPAY_SECRET_KEY
+            key_id: 'rzp_test_77fx4M5GdoisqN',
+            key_secret: 'I64i5zwEr32UpmLsHegmdSCS'
         })
        
         const amount=25000;
@@ -40,7 +40,7 @@ exports.membership=async(req,res,next)=>{
 }
 exports.updateTransactionStatus=async(req,res)=>{
     try{
-        
+        console.log('pooja')
         //console.log(req.body)
         const {payment_id,order_id}=req.body
         const order=await Order.findAll({where:{orderid:order_id}})
